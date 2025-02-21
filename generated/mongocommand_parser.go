@@ -52,63 +52,61 @@ func mongocommandParserInit() {
 		"NUMBER", "WS", "SINGLE_LINE_COMMENT", "MULTI_LINE_COMMENT",
 	}
 	staticData.RuleNames = []string{
-		"parse", "command", "collection", "operation", "arguments", "argument",
+		"mongoCommand", "command", "collection", "operation", "arguments", "argument",
 		"document", "pair", "operatorKey", "value", "simpleValue", "array",
 	}
 	staticData.PredictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
-		4, 1, 51, 125, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
+		4, 1, 51, 122, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
 		4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7,
-		10, 2, 11, 7, 11, 1, 0, 1, 0, 1, 0, 1, 0, 3, 0, 29, 8, 0, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 3, 1, 48, 8, 1, 1, 2, 1, 2, 1, 3, 1, 3, 1, 4, 1, 4, 1, 4,
-		1, 4, 5, 4, 58, 8, 4, 10, 4, 12, 4, 61, 9, 4, 1, 4, 1, 4, 1, 4, 1, 4, 3,
-		4, 67, 8, 4, 1, 5, 1, 5, 3, 5, 71, 8, 5, 1, 6, 1, 6, 1, 6, 1, 6, 5, 6,
-		77, 8, 6, 10, 6, 12, 6, 80, 9, 6, 3, 6, 82, 8, 6, 1, 6, 1, 6, 1, 7, 1,
-		7, 1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 3, 7, 96, 8, 7, 1, 8,
-		1, 8, 1, 9, 1, 9, 1, 9, 3, 9, 103, 8, 9, 1, 10, 1, 10, 1, 10, 1, 10, 1,
-		10, 3, 10, 110, 8, 10, 1, 11, 1, 11, 1, 11, 1, 11, 5, 11, 116, 8, 11, 10,
-		11, 12, 11, 119, 9, 11, 3, 11, 121, 8, 11, 1, 11, 1, 11, 1, 11, 0, 0, 12,
-		0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 0, 2, 1, 0, 1, 10, 1, 0, 23,
-		43, 129, 0, 24, 1, 0, 0, 0, 2, 47, 1, 0, 0, 0, 4, 49, 1, 0, 0, 0, 6, 51,
-		1, 0, 0, 0, 8, 66, 1, 0, 0, 0, 10, 70, 1, 0, 0, 0, 12, 72, 1, 0, 0, 0,
-		14, 95, 1, 0, 0, 0, 16, 97, 1, 0, 0, 0, 18, 102, 1, 0, 0, 0, 20, 109, 1,
-		0, 0, 0, 22, 111, 1, 0, 0, 0, 24, 28, 3, 2, 1, 0, 25, 26, 5, 16, 0, 0,
-		26, 29, 5, 0, 0, 1, 27, 29, 5, 0, 0, 1, 28, 25, 1, 0, 0, 0, 28, 27, 1,
-		0, 0, 0, 29, 1, 1, 0, 0, 0, 30, 31, 5, 11, 0, 0, 31, 32, 5, 13, 0, 0, 32,
-		33, 3, 4, 2, 0, 33, 34, 5, 13, 0, 0, 34, 35, 3, 6, 3, 0, 35, 36, 3, 8,
-		4, 0, 36, 48, 1, 0, 0, 0, 37, 38, 5, 11, 0, 0, 38, 39, 5, 13, 0, 0, 39,
-		40, 5, 12, 0, 0, 40, 41, 5, 17, 0, 0, 41, 42, 5, 47, 0, 0, 42, 43, 5, 18,
-		0, 0, 43, 44, 5, 13, 0, 0, 44, 45, 3, 6, 3, 0, 45, 46, 3, 8, 4, 0, 46,
-		48, 1, 0, 0, 0, 47, 30, 1, 0, 0, 0, 47, 37, 1, 0, 0, 0, 48, 3, 1, 0, 0,
-		0, 49, 50, 5, 46, 0, 0, 50, 5, 1, 0, 0, 0, 51, 52, 7, 0, 0, 0, 52, 7, 1,
-		0, 0, 0, 53, 54, 5, 17, 0, 0, 54, 59, 3, 10, 5, 0, 55, 56, 5, 14, 0, 0,
-		56, 58, 3, 10, 5, 0, 57, 55, 1, 0, 0, 0, 58, 61, 1, 0, 0, 0, 59, 57, 1,
-		0, 0, 0, 59, 60, 1, 0, 0, 0, 60, 62, 1, 0, 0, 0, 61, 59, 1, 0, 0, 0, 62,
-		63, 5, 18, 0, 0, 63, 67, 1, 0, 0, 0, 64, 65, 5, 17, 0, 0, 65, 67, 5, 18,
-		0, 0, 66, 53, 1, 0, 0, 0, 66, 64, 1, 0, 0, 0, 67, 9, 1, 0, 0, 0, 68, 71,
-		3, 12, 6, 0, 69, 71, 3, 22, 11, 0, 70, 68, 1, 0, 0, 0, 70, 69, 1, 0, 0,
-		0, 71, 11, 1, 0, 0, 0, 72, 81, 5, 21, 0, 0, 73, 78, 3, 14, 7, 0, 74, 75,
-		5, 14, 0, 0, 75, 77, 3, 14, 7, 0, 76, 74, 1, 0, 0, 0, 77, 80, 1, 0, 0,
-		0, 78, 76, 1, 0, 0, 0, 78, 79, 1, 0, 0, 0, 79, 82, 1, 0, 0, 0, 80, 78,
-		1, 0, 0, 0, 81, 73, 1, 0, 0, 0, 81, 82, 1, 0, 0, 0, 82, 83, 1, 0, 0, 0,
-		83, 84, 5, 22, 0, 0, 84, 13, 1, 0, 0, 0, 85, 86, 5, 47, 0, 0, 86, 87, 5,
-		15, 0, 0, 87, 96, 3, 18, 9, 0, 88, 89, 5, 46, 0, 0, 89, 90, 5, 15, 0, 0,
-		90, 96, 3, 18, 9, 0, 91, 92, 3, 16, 8, 0, 92, 93, 5, 15, 0, 0, 93, 94,
-		3, 18, 9, 0, 94, 96, 1, 0, 0, 0, 95, 85, 1, 0, 0, 0, 95, 88, 1, 0, 0, 0,
-		95, 91, 1, 0, 0, 0, 96, 15, 1, 0, 0, 0, 97, 98, 7, 1, 0, 0, 98, 17, 1,
-		0, 0, 0, 99, 103, 3, 20, 10, 0, 100, 103, 3, 12, 6, 0, 101, 103, 3, 22,
-		11, 0, 102, 99, 1, 0, 0, 0, 102, 100, 1, 0, 0, 0, 102, 101, 1, 0, 0, 0,
-		103, 19, 1, 0, 0, 0, 104, 110, 5, 47, 0, 0, 105, 110, 5, 48, 0, 0, 106,
-		110, 5, 44, 0, 0, 107, 110, 5, 45, 0, 0, 108, 110, 3, 16, 8, 0, 109, 104,
-		1, 0, 0, 0, 109, 105, 1, 0, 0, 0, 109, 106, 1, 0, 0, 0, 109, 107, 1, 0,
-		0, 0, 109, 108, 1, 0, 0, 0, 110, 21, 1, 0, 0, 0, 111, 120, 5, 19, 0, 0,
-		112, 117, 3, 18, 9, 0, 113, 114, 5, 14, 0, 0, 114, 116, 3, 18, 9, 0, 115,
-		113, 1, 0, 0, 0, 116, 119, 1, 0, 0, 0, 117, 115, 1, 0, 0, 0, 117, 118,
-		1, 0, 0, 0, 118, 121, 1, 0, 0, 0, 119, 117, 1, 0, 0, 0, 120, 112, 1, 0,
-		0, 0, 120, 121, 1, 0, 0, 0, 121, 122, 1, 0, 0, 0, 122, 123, 5, 20, 0, 0,
-		123, 23, 1, 0, 0, 0, 12, 28, 47, 59, 66, 70, 78, 81, 95, 102, 109, 117,
-		120,
+		10, 2, 11, 7, 11, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1,
+		45, 8, 1, 1, 2, 1, 2, 1, 3, 1, 3, 1, 4, 1, 4, 1, 4, 1, 4, 5, 4, 55, 8,
+		4, 10, 4, 12, 4, 58, 9, 4, 1, 4, 1, 4, 1, 4, 1, 4, 3, 4, 64, 8, 4, 1, 5,
+		1, 5, 3, 5, 68, 8, 5, 1, 6, 1, 6, 1, 6, 1, 6, 5, 6, 74, 8, 6, 10, 6, 12,
+		6, 77, 9, 6, 3, 6, 79, 8, 6, 1, 6, 1, 6, 1, 7, 1, 7, 1, 7, 1, 7, 1, 7,
+		1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 3, 7, 93, 8, 7, 1, 8, 1, 8, 1, 9, 1, 9, 1,
+		9, 3, 9, 100, 8, 9, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 3, 10, 107, 8, 10,
+		1, 11, 1, 11, 1, 11, 1, 11, 5, 11, 113, 8, 11, 10, 11, 12, 11, 116, 9,
+		11, 3, 11, 118, 8, 11, 1, 11, 1, 11, 1, 11, 0, 0, 12, 0, 2, 4, 6, 8, 10,
+		12, 14, 16, 18, 20, 22, 0, 3, 1, 1, 16, 16, 1, 0, 1, 10, 1, 0, 23, 43,
+		125, 0, 24, 1, 0, 0, 0, 2, 44, 1, 0, 0, 0, 4, 46, 1, 0, 0, 0, 6, 48, 1,
+		0, 0, 0, 8, 63, 1, 0, 0, 0, 10, 67, 1, 0, 0, 0, 12, 69, 1, 0, 0, 0, 14,
+		92, 1, 0, 0, 0, 16, 94, 1, 0, 0, 0, 18, 99, 1, 0, 0, 0, 20, 106, 1, 0,
+		0, 0, 22, 108, 1, 0, 0, 0, 24, 25, 3, 2, 1, 0, 25, 26, 7, 0, 0, 0, 26,
+		1, 1, 0, 0, 0, 27, 28, 5, 11, 0, 0, 28, 29, 5, 13, 0, 0, 29, 30, 3, 4,
+		2, 0, 30, 31, 5, 13, 0, 0, 31, 32, 3, 6, 3, 0, 32, 33, 3, 8, 4, 0, 33,
+		45, 1, 0, 0, 0, 34, 35, 5, 11, 0, 0, 35, 36, 5, 13, 0, 0, 36, 37, 5, 12,
+		0, 0, 37, 38, 5, 17, 0, 0, 38, 39, 5, 47, 0, 0, 39, 40, 5, 18, 0, 0, 40,
+		41, 5, 13, 0, 0, 41, 42, 3, 6, 3, 0, 42, 43, 3, 8, 4, 0, 43, 45, 1, 0,
+		0, 0, 44, 27, 1, 0, 0, 0, 44, 34, 1, 0, 0, 0, 45, 3, 1, 0, 0, 0, 46, 47,
+		5, 46, 0, 0, 47, 5, 1, 0, 0, 0, 48, 49, 7, 1, 0, 0, 49, 7, 1, 0, 0, 0,
+		50, 51, 5, 17, 0, 0, 51, 56, 3, 10, 5, 0, 52, 53, 5, 14, 0, 0, 53, 55,
+		3, 10, 5, 0, 54, 52, 1, 0, 0, 0, 55, 58, 1, 0, 0, 0, 56, 54, 1, 0, 0, 0,
+		56, 57, 1, 0, 0, 0, 57, 59, 1, 0, 0, 0, 58, 56, 1, 0, 0, 0, 59, 60, 5,
+		18, 0, 0, 60, 64, 1, 0, 0, 0, 61, 62, 5, 17, 0, 0, 62, 64, 5, 18, 0, 0,
+		63, 50, 1, 0, 0, 0, 63, 61, 1, 0, 0, 0, 64, 9, 1, 0, 0, 0, 65, 68, 3, 12,
+		6, 0, 66, 68, 3, 22, 11, 0, 67, 65, 1, 0, 0, 0, 67, 66, 1, 0, 0, 0, 68,
+		11, 1, 0, 0, 0, 69, 78, 5, 21, 0, 0, 70, 75, 3, 14, 7, 0, 71, 72, 5, 14,
+		0, 0, 72, 74, 3, 14, 7, 0, 73, 71, 1, 0, 0, 0, 74, 77, 1, 0, 0, 0, 75,
+		73, 1, 0, 0, 0, 75, 76, 1, 0, 0, 0, 76, 79, 1, 0, 0, 0, 77, 75, 1, 0, 0,
+		0, 78, 70, 1, 0, 0, 0, 78, 79, 1, 0, 0, 0, 79, 80, 1, 0, 0, 0, 80, 81,
+		5, 22, 0, 0, 81, 13, 1, 0, 0, 0, 82, 83, 5, 47, 0, 0, 83, 84, 5, 15, 0,
+		0, 84, 93, 3, 18, 9, 0, 85, 86, 5, 46, 0, 0, 86, 87, 5, 15, 0, 0, 87, 93,
+		3, 18, 9, 0, 88, 89, 3, 16, 8, 0, 89, 90, 5, 15, 0, 0, 90, 91, 3, 18, 9,
+		0, 91, 93, 1, 0, 0, 0, 92, 82, 1, 0, 0, 0, 92, 85, 1, 0, 0, 0, 92, 88,
+		1, 0, 0, 0, 93, 15, 1, 0, 0, 0, 94, 95, 7, 2, 0, 0, 95, 17, 1, 0, 0, 0,
+		96, 100, 3, 20, 10, 0, 97, 100, 3, 12, 6, 0, 98, 100, 3, 22, 11, 0, 99,
+		96, 1, 0, 0, 0, 99, 97, 1, 0, 0, 0, 99, 98, 1, 0, 0, 0, 100, 19, 1, 0,
+		0, 0, 101, 107, 5, 47, 0, 0, 102, 107, 5, 48, 0, 0, 103, 107, 5, 44, 0,
+		0, 104, 107, 5, 45, 0, 0, 105, 107, 3, 16, 8, 0, 106, 101, 1, 0, 0, 0,
+		106, 102, 1, 0, 0, 0, 106, 103, 1, 0, 0, 0, 106, 104, 1, 0, 0, 0, 106,
+		105, 1, 0, 0, 0, 107, 21, 1, 0, 0, 0, 108, 117, 5, 19, 0, 0, 109, 114,
+		3, 18, 9, 0, 110, 111, 5, 14, 0, 0, 111, 113, 3, 18, 9, 0, 112, 110, 1,
+		0, 0, 0, 113, 116, 1, 0, 0, 0, 114, 112, 1, 0, 0, 0, 114, 115, 1, 0, 0,
+		0, 115, 118, 1, 0, 0, 0, 116, 114, 1, 0, 0, 0, 117, 109, 1, 0, 0, 0, 117,
+		118, 1, 0, 0, 0, 118, 119, 1, 0, 0, 0, 119, 120, 5, 20, 0, 0, 120, 23,
+		1, 0, 0, 0, 11, 44, 56, 63, 67, 75, 78, 92, 99, 106, 114, 117,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
 	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -202,22 +200,22 @@ const (
 
 // MongoCommandParser rules.
 const (
-	MongoCommandParserRULE_parse       = 0
-	MongoCommandParserRULE_command     = 1
-	MongoCommandParserRULE_collection  = 2
-	MongoCommandParserRULE_operation   = 3
-	MongoCommandParserRULE_arguments   = 4
-	MongoCommandParserRULE_argument    = 5
-	MongoCommandParserRULE_document    = 6
-	MongoCommandParserRULE_pair        = 7
-	MongoCommandParserRULE_operatorKey = 8
-	MongoCommandParserRULE_value       = 9
-	MongoCommandParserRULE_simpleValue = 10
-	MongoCommandParserRULE_array       = 11
+	MongoCommandParserRULE_mongoCommand = 0
+	MongoCommandParserRULE_command      = 1
+	MongoCommandParserRULE_collection   = 2
+	MongoCommandParserRULE_operation    = 3
+	MongoCommandParserRULE_arguments    = 4
+	MongoCommandParserRULE_argument     = 5
+	MongoCommandParserRULE_document     = 6
+	MongoCommandParserRULE_pair         = 7
+	MongoCommandParserRULE_operatorKey  = 8
+	MongoCommandParserRULE_value        = 9
+	MongoCommandParserRULE_simpleValue  = 10
+	MongoCommandParserRULE_array        = 11
 )
 
-// IParseContext is an interface to support dynamic dispatch.
-type IParseContext interface {
+// IMongoCommandContext is an interface to support dynamic dispatch.
+type IMongoCommandContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
@@ -228,43 +226,43 @@ type IParseContext interface {
 	SEMICOLON() antlr.TerminalNode
 	EOF() antlr.TerminalNode
 
-	// IsParseContext differentiates from other interfaces.
-	IsParseContext()
+	// IsMongoCommandContext differentiates from other interfaces.
+	IsMongoCommandContext()
 }
 
-type ParseContext struct {
+type MongoCommandContext struct {
 	antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyParseContext() *ParseContext {
-	var p = new(ParseContext)
+func NewEmptyMongoCommandContext() *MongoCommandContext {
+	var p = new(MongoCommandContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = MongoCommandParserRULE_parse
+	p.RuleIndex = MongoCommandParserRULE_mongoCommand
 	return p
 }
 
-func InitEmptyParseContext(p *ParseContext) {
+func InitEmptyMongoCommandContext(p *MongoCommandContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = MongoCommandParserRULE_parse
+	p.RuleIndex = MongoCommandParserRULE_mongoCommand
 }
 
-func (*ParseContext) IsParseContext() {}
+func (*MongoCommandContext) IsMongoCommandContext() {}
 
-func NewParseContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ParseContext {
-	var p = new(ParseContext)
+func NewMongoCommandContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *MongoCommandContext {
+	var p = new(MongoCommandContext)
 
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = MongoCommandParserRULE_parse
+	p.RuleIndex = MongoCommandParserRULE_mongoCommand
 
 	return p
 }
 
-func (s *ParseContext) GetParser() antlr.Parser { return s.parser }
+func (s *MongoCommandContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ParseContext) Command() ICommandContext {
+func (s *MongoCommandContext) Command() ICommandContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
 		if _, ok := ctx.(ICommandContext); ok {
@@ -280,80 +278,54 @@ func (s *ParseContext) Command() ICommandContext {
 	return t.(ICommandContext)
 }
 
-func (s *ParseContext) SEMICOLON() antlr.TerminalNode {
+func (s *MongoCommandContext) SEMICOLON() antlr.TerminalNode {
 	return s.GetToken(MongoCommandParserSEMICOLON, 0)
 }
 
-func (s *ParseContext) EOF() antlr.TerminalNode {
+func (s *MongoCommandContext) EOF() antlr.TerminalNode {
 	return s.GetToken(MongoCommandParserEOF, 0)
 }
 
-func (s *ParseContext) GetRuleContext() antlr.RuleContext {
+func (s *MongoCommandContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ParseContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *MongoCommandContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ParseContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *MongoCommandContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MongoCommandListener); ok {
-		listenerT.EnterParse(s)
+		listenerT.EnterMongoCommand(s)
 	}
 }
 
-func (s *ParseContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *MongoCommandContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MongoCommandListener); ok {
-		listenerT.ExitParse(s)
+		listenerT.ExitMongoCommand(s)
 	}
 }
 
-func (p *MongoCommandParser) Parse() (localctx IParseContext) {
-	localctx = NewParseContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, MongoCommandParserRULE_parse)
+func (p *MongoCommandParser) MongoCommand() (localctx IMongoCommandContext) {
+	localctx = NewMongoCommandContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 0, MongoCommandParserRULE_mongoCommand)
+	var _la int
+
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(24)
 		p.Command()
 	}
-	p.SetState(28)
-	p.GetErrorHandler().Sync(p)
-	if p.HasError() {
-		goto errorExit
-	}
+	{
+		p.SetState(25)
+		_la = p.GetTokenStream().LA(1)
 
-	switch p.GetTokenStream().LA(1) {
-	case MongoCommandParserSEMICOLON:
-		{
-			p.SetState(25)
-			p.Match(MongoCommandParserSEMICOLON)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
+		if !(_la == MongoCommandParserEOF || _la == MongoCommandParserSEMICOLON) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
 		}
-		{
-			p.SetState(26)
-			p.Match(MongoCommandParserEOF)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-
-	case MongoCommandParserEOF:
-		{
-			p.SetState(27)
-			p.Match(MongoCommandParserEOF)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-
-	default:
-		p.SetError(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
-		goto errorExit
 	}
 
 errorExit:
@@ -523,18 +495,38 @@ func (s *CommandContext) ExitRule(listener antlr.ParseTreeListener) {
 func (p *MongoCommandParser) Command() (localctx ICommandContext) {
 	localctx = NewCommandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, MongoCommandParserRULE_command)
-	p.SetState(47)
+	p.SetState(44)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 1, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 0, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(30)
+			p.SetState(27)
 			p.Match(MongoCommandParserDB)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		{
+			p.SetState(28)
+			p.Match(MongoCommandParserDOT)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		{
+			p.SetState(29)
+			p.Collection()
+		}
+		{
+			p.SetState(30)
+			p.Match(MongoCommandParserDOT)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -542,37 +534,17 @@ func (p *MongoCommandParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(31)
-			p.Match(MongoCommandParserDOT)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		{
-			p.SetState(32)
-			p.Collection()
-		}
-		{
-			p.SetState(33)
-			p.Match(MongoCommandParserDOT)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		{
-			p.SetState(34)
 			p.Operation()
 		}
 		{
-			p.SetState(35)
+			p.SetState(32)
 			p.Arguments()
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(37)
+			p.SetState(34)
 			p.Match(MongoCommandParserDB)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -580,7 +552,7 @@ func (p *MongoCommandParser) Command() (localctx ICommandContext) {
 			}
 		}
 		{
-			p.SetState(38)
+			p.SetState(35)
 			p.Match(MongoCommandParserDOT)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -588,7 +560,7 @@ func (p *MongoCommandParser) Command() (localctx ICommandContext) {
 			}
 		}
 		{
-			p.SetState(39)
+			p.SetState(36)
 			p.Match(MongoCommandParserGET_COLLECTION)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -596,7 +568,7 @@ func (p *MongoCommandParser) Command() (localctx ICommandContext) {
 			}
 		}
 		{
-			p.SetState(40)
+			p.SetState(37)
 			p.Match(MongoCommandParserLPAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -604,7 +576,7 @@ func (p *MongoCommandParser) Command() (localctx ICommandContext) {
 			}
 		}
 		{
-			p.SetState(41)
+			p.SetState(38)
 			p.Match(MongoCommandParserSTRING)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -612,7 +584,7 @@ func (p *MongoCommandParser) Command() (localctx ICommandContext) {
 			}
 		}
 		{
-			p.SetState(42)
+			p.SetState(39)
 			p.Match(MongoCommandParserRPAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -620,7 +592,7 @@ func (p *MongoCommandParser) Command() (localctx ICommandContext) {
 			}
 		}
 		{
-			p.SetState(43)
+			p.SetState(40)
 			p.Match(MongoCommandParserDOT)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -628,11 +600,11 @@ func (p *MongoCommandParser) Command() (localctx ICommandContext) {
 			}
 		}
 		{
-			p.SetState(44)
+			p.SetState(41)
 			p.Operation()
 		}
 		{
-			p.SetState(45)
+			p.SetState(42)
 			p.Arguments()
 		}
 
@@ -728,7 +700,7 @@ func (p *MongoCommandParser) Collection() (localctx ICollectionContext) {
 	p.EnterRule(localctx, 4, MongoCommandParserRULE_collection)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(49)
+		p.SetState(46)
 		p.Match(MongoCommandParserIDENTIFIER)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -817,7 +789,7 @@ func (p *MongoCommandParser) Operation() (localctx IOperationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(51)
+		p.SetState(48)
 		_la = p.GetTokenStream().LA(1)
 
 		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&2046) != 0) {
@@ -974,17 +946,17 @@ func (p *MongoCommandParser) Arguments() (localctx IArgumentsContext) {
 	p.EnterRule(localctx, 8, MongoCommandParserRULE_arguments)
 	var _la int
 
-	p.SetState(66)
+	p.SetState(63)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 3, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 2, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(53)
+			p.SetState(50)
 			p.Match(MongoCommandParserLPAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -992,10 +964,10 @@ func (p *MongoCommandParser) Arguments() (localctx IArgumentsContext) {
 			}
 		}
 		{
-			p.SetState(54)
+			p.SetState(51)
 			p.Argument()
 		}
-		p.SetState(59)
+		p.SetState(56)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -1004,7 +976,7 @@ func (p *MongoCommandParser) Arguments() (localctx IArgumentsContext) {
 
 		for _la == MongoCommandParserCOMMA {
 			{
-				p.SetState(55)
+				p.SetState(52)
 				p.Match(MongoCommandParserCOMMA)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -1012,11 +984,11 @@ func (p *MongoCommandParser) Arguments() (localctx IArgumentsContext) {
 				}
 			}
 			{
-				p.SetState(56)
+				p.SetState(53)
 				p.Argument()
 			}
 
-			p.SetState(61)
+			p.SetState(58)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -1024,7 +996,7 @@ func (p *MongoCommandParser) Arguments() (localctx IArgumentsContext) {
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(62)
+			p.SetState(59)
 			p.Match(MongoCommandParserRPAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -1035,7 +1007,7 @@ func (p *MongoCommandParser) Arguments() (localctx IArgumentsContext) {
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(64)
+			p.SetState(61)
 			p.Match(MongoCommandParserLPAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -1043,7 +1015,7 @@ func (p *MongoCommandParser) Arguments() (localctx IArgumentsContext) {
 			}
 		}
 		{
-			p.SetState(65)
+			p.SetState(62)
 			p.Match(MongoCommandParserRPAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -1170,7 +1142,7 @@ func (s *ArgumentContext) ExitRule(listener antlr.ParseTreeListener) {
 func (p *MongoCommandParser) Argument() (localctx IArgumentContext) {
 	localctx = NewArgumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, MongoCommandParserRULE_argument)
-	p.SetState(70)
+	p.SetState(67)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -1180,14 +1152,14 @@ func (p *MongoCommandParser) Argument() (localctx IArgumentContext) {
 	case MongoCommandParserLCURLY:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(68)
+			p.SetState(65)
 			p.Document()
 		}
 
 	case MongoCommandParserLBRACK:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(69)
+			p.SetState(66)
 			p.Array()
 		}
 
@@ -1344,14 +1316,14 @@ func (p *MongoCommandParser) Document() (localctx IDocumentContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(72)
+		p.SetState(69)
 		p.Match(MongoCommandParserLCURLY)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
-	p.SetState(81)
+	p.SetState(78)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -1360,10 +1332,10 @@ func (p *MongoCommandParser) Document() (localctx IDocumentContext) {
 
 	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&228698410188800) != 0 {
 		{
-			p.SetState(73)
+			p.SetState(70)
 			p.Pair()
 		}
-		p.SetState(78)
+		p.SetState(75)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -1372,7 +1344,7 @@ func (p *MongoCommandParser) Document() (localctx IDocumentContext) {
 
 		for _la == MongoCommandParserCOMMA {
 			{
-				p.SetState(74)
+				p.SetState(71)
 				p.Match(MongoCommandParserCOMMA)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -1380,11 +1352,11 @@ func (p *MongoCommandParser) Document() (localctx IDocumentContext) {
 				}
 			}
 			{
-				p.SetState(75)
+				p.SetState(72)
 				p.Pair()
 			}
 
-			p.SetState(80)
+			p.SetState(77)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -1394,7 +1366,7 @@ func (p *MongoCommandParser) Document() (localctx IDocumentContext) {
 
 	}
 	{
-		p.SetState(83)
+		p.SetState(80)
 		p.Match(MongoCommandParserRCURLY)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -1543,7 +1515,7 @@ func (s *PairContext) ExitRule(listener antlr.ParseTreeListener) {
 func (p *MongoCommandParser) Pair() (localctx IPairContext) {
 	localctx = NewPairContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, MongoCommandParserRULE_pair)
-	p.SetState(95)
+	p.SetState(92)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -1553,9 +1525,35 @@ func (p *MongoCommandParser) Pair() (localctx IPairContext) {
 	case MongoCommandParserSTRING:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(85)
+			p.SetState(82)
 
 			var _m = p.Match(MongoCommandParserSTRING)
+
+			localctx.(*PairContext).key = _m
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		{
+			p.SetState(83)
+			p.Match(MongoCommandParserCOLON)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		{
+			p.SetState(84)
+			p.Value()
+		}
+
+	case MongoCommandParserIDENTIFIER:
+		p.EnterOuterAlt(localctx, 2)
+		{
+			p.SetState(85)
+
+			var _m = p.Match(MongoCommandParserIDENTIFIER)
 
 			localctx.(*PairContext).key = _m
 			if p.HasError() {
@@ -1576,18 +1574,11 @@ func (p *MongoCommandParser) Pair() (localctx IPairContext) {
 			p.Value()
 		}
 
-	case MongoCommandParserIDENTIFIER:
-		p.EnterOuterAlt(localctx, 2)
+	case MongoCommandParserDOLLAR_SET, MongoCommandParserDOLLAR_UNSET, MongoCommandParserDOLLAR_INC, MongoCommandParserDOLLAR_PUSH, MongoCommandParserDOLLAR_PULL, MongoCommandParserDOLLAR_IN, MongoCommandParserDOLLAR_NIN, MongoCommandParserDOLLAR_GT, MongoCommandParserDOLLAR_GTE, MongoCommandParserDOLLAR_LT, MongoCommandParserDOLLAR_LTE, MongoCommandParserDOLLAR_EQ, MongoCommandParserDOLLAR_NE, MongoCommandParserDOLLAR_EXISTS, MongoCommandParserDOLLAR_TYPE, MongoCommandParserDOLLAR_OR, MongoCommandParserDOLLAR_AND, MongoCommandParserDOLLAR_NOT, MongoCommandParserDOLLAR_MATCH, MongoCommandParserDOLLAR_GROUP, MongoCommandParserDOLLAR_PROJECT:
+		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(88)
-
-			var _m = p.Match(MongoCommandParserIDENTIFIER)
-
-			localctx.(*PairContext).key = _m
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
+			p.OperatorKey()
 		}
 		{
 			p.SetState(89)
@@ -1599,25 +1590,6 @@ func (p *MongoCommandParser) Pair() (localctx IPairContext) {
 		}
 		{
 			p.SetState(90)
-			p.Value()
-		}
-
-	case MongoCommandParserDOLLAR_SET, MongoCommandParserDOLLAR_UNSET, MongoCommandParserDOLLAR_INC, MongoCommandParserDOLLAR_PUSH, MongoCommandParserDOLLAR_PULL, MongoCommandParserDOLLAR_IN, MongoCommandParserDOLLAR_NIN, MongoCommandParserDOLLAR_GT, MongoCommandParserDOLLAR_GTE, MongoCommandParserDOLLAR_LT, MongoCommandParserDOLLAR_LTE, MongoCommandParserDOLLAR_EQ, MongoCommandParserDOLLAR_NE, MongoCommandParserDOLLAR_EXISTS, MongoCommandParserDOLLAR_TYPE, MongoCommandParserDOLLAR_OR, MongoCommandParserDOLLAR_AND, MongoCommandParserDOLLAR_NOT, MongoCommandParserDOLLAR_MATCH, MongoCommandParserDOLLAR_GROUP, MongoCommandParserDOLLAR_PROJECT:
-		p.EnterOuterAlt(localctx, 3)
-		{
-			p.SetState(91)
-			p.OperatorKey()
-		}
-		{
-			p.SetState(92)
-			p.Match(MongoCommandParserCOLON)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		{
-			p.SetState(93)
 			p.Value()
 		}
 
@@ -1816,7 +1788,7 @@ func (p *MongoCommandParser) OperatorKey() (localctx IOperatorKeyContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(97)
+		p.SetState(94)
 		_la = p.GetTokenStream().LA(1)
 
 		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&17592177655808) != 0) {
@@ -1959,7 +1931,7 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 func (p *MongoCommandParser) Value() (localctx IValueContext) {
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, MongoCommandParserRULE_value)
-	p.SetState(102)
+	p.SetState(99)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -1969,21 +1941,21 @@ func (p *MongoCommandParser) Value() (localctx IValueContext) {
 	case MongoCommandParserDOLLAR_SET, MongoCommandParserDOLLAR_UNSET, MongoCommandParserDOLLAR_INC, MongoCommandParserDOLLAR_PUSH, MongoCommandParserDOLLAR_PULL, MongoCommandParserDOLLAR_IN, MongoCommandParserDOLLAR_NIN, MongoCommandParserDOLLAR_GT, MongoCommandParserDOLLAR_GTE, MongoCommandParserDOLLAR_LT, MongoCommandParserDOLLAR_LTE, MongoCommandParserDOLLAR_EQ, MongoCommandParserDOLLAR_NE, MongoCommandParserDOLLAR_EXISTS, MongoCommandParserDOLLAR_TYPE, MongoCommandParserDOLLAR_OR, MongoCommandParserDOLLAR_AND, MongoCommandParserDOLLAR_NOT, MongoCommandParserDOLLAR_MATCH, MongoCommandParserDOLLAR_GROUP, MongoCommandParserDOLLAR_PROJECT, MongoCommandParserBOOLEAN, MongoCommandParserNULL, MongoCommandParserSTRING, MongoCommandParserNUMBER:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(99)
+			p.SetState(96)
 			p.SimpleValue()
 		}
 
 	case MongoCommandParserLCURLY:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(100)
+			p.SetState(97)
 			p.Document()
 		}
 
 	case MongoCommandParserLBRACK:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(101)
+			p.SetState(98)
 			p.Array()
 		}
 
@@ -2110,7 +2082,7 @@ func (s *SimpleValueContext) ExitRule(listener antlr.ParseTreeListener) {
 func (p *MongoCommandParser) SimpleValue() (localctx ISimpleValueContext) {
 	localctx = NewSimpleValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, MongoCommandParserRULE_simpleValue)
-	p.SetState(109)
+	p.SetState(106)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -2120,7 +2092,7 @@ func (p *MongoCommandParser) SimpleValue() (localctx ISimpleValueContext) {
 	case MongoCommandParserSTRING:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(104)
+			p.SetState(101)
 			p.Match(MongoCommandParserSTRING)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -2131,7 +2103,7 @@ func (p *MongoCommandParser) SimpleValue() (localctx ISimpleValueContext) {
 	case MongoCommandParserNUMBER:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(105)
+			p.SetState(102)
 			p.Match(MongoCommandParserNUMBER)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -2142,7 +2114,7 @@ func (p *MongoCommandParser) SimpleValue() (localctx ISimpleValueContext) {
 	case MongoCommandParserBOOLEAN:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(106)
+			p.SetState(103)
 			p.Match(MongoCommandParserBOOLEAN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -2153,7 +2125,7 @@ func (p *MongoCommandParser) SimpleValue() (localctx ISimpleValueContext) {
 	case MongoCommandParserNULL:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(107)
+			p.SetState(104)
 			p.Match(MongoCommandParserNULL)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -2164,7 +2136,7 @@ func (p *MongoCommandParser) SimpleValue() (localctx ISimpleValueContext) {
 	case MongoCommandParserDOLLAR_SET, MongoCommandParserDOLLAR_UNSET, MongoCommandParserDOLLAR_INC, MongoCommandParserDOLLAR_PUSH, MongoCommandParserDOLLAR_PULL, MongoCommandParserDOLLAR_IN, MongoCommandParserDOLLAR_NIN, MongoCommandParserDOLLAR_GT, MongoCommandParserDOLLAR_GTE, MongoCommandParserDOLLAR_LT, MongoCommandParserDOLLAR_LTE, MongoCommandParserDOLLAR_EQ, MongoCommandParserDOLLAR_NE, MongoCommandParserDOLLAR_EXISTS, MongoCommandParserDOLLAR_TYPE, MongoCommandParserDOLLAR_OR, MongoCommandParserDOLLAR_AND, MongoCommandParserDOLLAR_NOT, MongoCommandParserDOLLAR_MATCH, MongoCommandParserDOLLAR_GROUP, MongoCommandParserDOLLAR_PROJECT:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(108)
+			p.SetState(105)
 			p.OperatorKey()
 		}
 
@@ -2321,14 +2293,14 @@ func (p *MongoCommandParser) Array() (localctx IArrayContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(111)
+		p.SetState(108)
 		p.Match(MongoCommandParserLBRACK)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
-	p.SetState(120)
+	p.SetState(117)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -2337,10 +2309,10 @@ func (p *MongoCommandParser) Array() (localctx IArrayContext) {
 
 	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&492581203476480) != 0 {
 		{
-			p.SetState(112)
+			p.SetState(109)
 			p.Value()
 		}
-		p.SetState(117)
+		p.SetState(114)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -2349,7 +2321,7 @@ func (p *MongoCommandParser) Array() (localctx IArrayContext) {
 
 		for _la == MongoCommandParserCOMMA {
 			{
-				p.SetState(113)
+				p.SetState(110)
 				p.Match(MongoCommandParserCOMMA)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -2357,11 +2329,11 @@ func (p *MongoCommandParser) Array() (localctx IArrayContext) {
 				}
 			}
 			{
-				p.SetState(114)
+				p.SetState(111)
 				p.Value()
 			}
 
-			p.SetState(119)
+			p.SetState(116)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -2371,7 +2343,7 @@ func (p *MongoCommandParser) Array() (localctx IArrayContext) {
 
 	}
 	{
-		p.SetState(122)
+		p.SetState(119)
 		p.Match(MongoCommandParserRBRACK)
 		if p.HasError() {
 			// Recognition error - abort rule

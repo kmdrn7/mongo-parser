@@ -8,8 +8,8 @@ import "github.com/antlr4-go/antlr/v4"
 type MongoCommandListener interface {
 	antlr.ParseTreeListener
 
-	// EnterParse is called when entering the parse production.
-	EnterParse(c *ParseContext)
+	// EnterMongoCommand is called when entering the mongoCommand production.
+	EnterMongoCommand(c *MongoCommandContext)
 
 	// EnterCommand is called when entering the command production.
 	EnterCommand(c *CommandContext)
@@ -44,8 +44,8 @@ type MongoCommandListener interface {
 	// EnterArray is called when entering the array production.
 	EnterArray(c *ArrayContext)
 
-	// ExitParse is called when exiting the parse production.
-	ExitParse(c *ParseContext)
+	// ExitMongoCommand is called when exiting the mongoCommand production.
+	ExitMongoCommand(c *MongoCommandContext)
 
 	// ExitCommand is called when exiting the command production.
 	ExitCommand(c *CommandContext)

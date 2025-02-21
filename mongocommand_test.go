@@ -47,9 +47,20 @@ func TestParseMongoQuery(t *testing.T) {
 			`,
 		},
 		{
+			name: "parse find multiline query with filters",
+			query: `
+				db.users.find({
+					name: "John",
+					age: { $gt: 21 }
+				});
+				db.users.find({ name: "Doe", age: { $gt: 21 } })
+			`,
+		},
+		{
 			name: "parse updateMany query with filters using getCollection",
 			query: `
-				db.getCollection("users").updateMany({"type" :"TYPE"},{$set:{"subType" :"SUB_TYPE"}});
+				db.getCollection("users").deleteMany({exampleArg:true});
+				db.getCollection("users").deleteMany({exampleArg:false});
 			`,
 		},
 	}
@@ -69,7 +80,7 @@ func TestParseMongoQuery(t *testing.T) {
 			p.RemoveErrorListeners()
 			p.AddErrorListener(errorListener)
 			// parse the input
-			tree := p.Parse()
+			tree := p.MongoCommand()
 			if errorListener.errors > 0 {
 				fmt.Printf("Found %d errors\n", errorListener.errors)
 			} else {

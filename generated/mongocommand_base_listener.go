@@ -21,11 +21,11 @@ func (s *BaseMongoCommandListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 // ExitEveryRule is called when any rule is exited.
 func (s *BaseMongoCommandListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
 
-// EnterParse is called when production parse is entered.
-func (s *BaseMongoCommandListener) EnterParse(ctx *ParseContext) {}
+// EnterMongoCommand is called when production mongoCommand is entered.
+func (s *BaseMongoCommandListener) EnterMongoCommand(ctx *MongoCommandContext) {}
 
-// ExitParse is called when production parse is exited.
-func (s *BaseMongoCommandListener) ExitParse(ctx *ParseContext) {}
+// ExitMongoCommand is called when production mongoCommand is exited.
+func (s *BaseMongoCommandListener) ExitMongoCommand(ctx *MongoCommandContext) {}
 
 // EnterCommand is called when production command is entered.
 func (s *BaseMongoCommandListener) EnterCommand(ctx *CommandContext) {}

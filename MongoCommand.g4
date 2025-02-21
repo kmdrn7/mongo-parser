@@ -1,8 +1,8 @@
 grammar MongoCommand;
 
 // Parser Rules
-parse
-    : command (SEMICOLON EOF | EOF)
+mongoCommand
+    : command (SEMICOLON | EOF)
     ;
 
 command
