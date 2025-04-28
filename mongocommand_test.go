@@ -57,10 +57,22 @@ func TestParseMongoQuery(t *testing.T) {
 			`,
 		},
 		{
-			name: "parse updateMany query with filters using getCollection",
+			name: "parse deleteMany query with filters using getCollection",
 			query: `
 				db.getCollection("users").deleteMany({exampleArg:true});
 				db.getCollection("users").deleteMany({exampleArg:false});
+			`,
+		},
+		{
+			name: "parse updateMany query with filters using getCollection",
+			query: `
+				db.getCollection("users").updateMany({"exampleArg" :"TRUE"},{$set:{"exampleArg2" :"FALSE"}});
+			`,
+		},
+		{
+			name: "parse updateMany query without filters using getCollection",
+			query: `
+				db.getCollection("users").updateMany({},{$set:{"exampleArg2" :"FALSE"}});
 			`,
 		},
 	}
